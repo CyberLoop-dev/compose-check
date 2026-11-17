@@ -1,0 +1,11 @@
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+  api:
+    build: .
+    depends_on:
+      - cache
+    ports:
+      - "8080:3000"
